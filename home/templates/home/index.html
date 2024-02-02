@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %} 
+
+
+{% block content %} 
+
+<div class="container flex-column pt-3">
+    <section class="text-center">
+        <h1 class="main-title mx-auto">India's First Appliances Review Website</h1>
+
+        <p class="pt-4">
+            Welcome to our one-stop destination for all your appliances. We provide you with the best reviews and recommendations for all your appliances.
+            
+        </p>
+    </section>
+    <section>
+        <div class="appliance-cont">
+            {% for appliance in appliances %} 
+                <a href="{{ appliance.google_drive_link }}" class="img-container">
+                    <img src="{{appliance.image.url}}"  style="width: 100%">
+                    <div class="centered"><h2>{{appliance.name}}</h2></div>
+                    
+                    
+                </a>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+
+{% endblock %}
