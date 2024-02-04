@@ -2,6 +2,12 @@ from django.db import models
 from django.contrib.auth.models import User
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
+import os
+
+def file_path(instance, filename):
+    path = "documents/"
+    format = "uploaded-"+filename
+    return os.path.join(path, format)
 
 class Appliances(models.Model):
     user = models.ForeignKey(
@@ -9,7 +15,7 @@ class Appliances(models.Model):
     )
     name = models.CharField(max_length=100)
     google_drive_link = models.CharField(max_length = 200 , null = True , blank = True)
-    
+    pdf_file = models.FileField(upload_to=file_path, null=True, blank=True)
     
     image = ResizedImageField(
         size=[400, None],

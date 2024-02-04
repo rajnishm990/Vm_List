@@ -17,7 +17,7 @@
     <section>
         <div class="appliance-cont">
             {% for appliance in appliances %} 
-                <a href="{{ appliance.google_drive_link }}" class="img-container" target="_blank">
+                <a href="{{ appliance.pdf_file.url }}" class="img-container" target="_blank">
                     <img src="{{appliance.image.url}}"  style="width: 100%">
                     <div class="centered"><h2>{{appliance.name}}</h2></div>
                     
