@@ -15,7 +15,8 @@ class Appliances(models.Model):
     )
     name = models.CharField(max_length=100)
     google_drive_link = models.CharField(max_length = 200 , null = True , blank = True)
-    pdf_file = models.FileField(upload_to=file_path, null=True, blank=True)
+    pdf_file = models.FileField(upload_to=file_path, null=True, blank=True , unique=False)
+    description = models.TextField(max_length=500, null=True, blank=True)    
     
     image = ResizedImageField(
         size=[400, None],
