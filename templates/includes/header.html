@@ -4,7 +4,7 @@
     {% with request.resolver_match.url_name as url_name %}
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">VMLIST</a>
+      <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/VM LIST-logos_black.png' %}" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -14,7 +14,7 @@
             <a class="nav-link {% if url_name == 'home' %} active {% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active " aria-current="page" href="#">Contact Us</a>
+            <a class="nav-link {% if url_name == 'contact' %} active {% endif %}" aria-current="page" href="#">Contact Us</a>
           </li>
           
           
